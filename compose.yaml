@@ -5,7 +5,7 @@ services:
     image: orbit-soft-web:${RELEASE_COMMIT:-local}
     restart: unless-stopped
     ports:
-      - '127.0.0.1:8082:80'
+      - '80:80'
     networks:
       public:
         aliases:

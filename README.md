@@ -39,7 +39,7 @@ docs/                           Arquitectura, Android y despliegue
 
 Agregar o editar soluciones en `apps/web/data/catalog.js`. Cada registro alimenta catálogo, ficha y selector de solicitud. Precios desde S/ 300 para webs y desde S/ 350 para una adaptación Android básica; referencias editoriales sujetas a alcance, sin prometer un paquete cerrado. Plazos en semanas desde la definición y recepción del contenido.
 
-WhatsApp conservado del proyecto anterior: +51 978 371 277. Cambiar `apps/web/data/contact.js` si cambia el contacto comercial. El formulario no almacena datos ni envía automáticamente: valida, prepara un mensaje, permite revisarlo/copiarlo y abre WhatsApp al elegir Enviar.
+WhatsApp comercial: +51 978 371 277. Cambiar `apps/web/data/contact.js` si cambia el contacto comercial. El formulario no almacena datos ni envía automáticamente: valida, prepara un mensaje, permite revisarlo/copiarlo y abre WhatsApp al elegir Enviar.
 
 Campus Planner es la única demo funcional. Las demás fichas son propuestas de adaptación por encargo, no apps ya terminadas. No se inventan clientes, testimonios ni trabajos entregados.
 
@@ -58,12 +58,11 @@ Consultar [Android](docs/ANDROID.md) para producir y firmar el APK. Se generó/s
 
 [Arquitectura](docs/ARQUITECTURA.md), [despliegue AWS](docs/DESPLIEGUE.md) y [planificación](PLANIFICACION.md). Solo se despliega la web estática y su demo; el backend futuro está deshabilitado. Roles, usuarios y proveedor de autenticación existen como contratos opcionales del núcleo, sin login real ni garantías de seguridad de servidor.
 
-Destino AWS: `/home/ec2-user/orbit-soft`. URL principal HTTP: http://18.224.68.11/orbit-soft/ (también funciona el hostname AWS con ese prefijo). `/orbit-soft/health.json` identifica el commit del build publicado. Nginx retira el prefijo al consultar el contenedor estático, por lo que la web y la demo usan enlaces relativos sin cambios. Orbit Joy conserva la raíz pública y sus servicios/datos; su administración se bloquea por HTTP. HTTPS propio pendiente de dominio/certificado.
+Destino AWS: `/home/ec2-user/orbit-soft`. URL principal HTTP: http://18.224.68.11/orbit-soft/ (también funciona el hostname AWS con ese prefijo). `/orbit-soft/health.json` identifica el commit del build publicado. Orbit Soft es el único proyecto de la instancia: Nginx atiende directamente el puerto 80, sirve los archivos bajo /orbit-soft/ y redirige la raíz a esa ruta. No utiliza un proxy de otra aplicación. HTTPS propio pendiente de dominio/certificado.
 
 ## Validación y privacidad
 
-`npm test` comprueba registros comerciales, composición/codificación de la solicitud, copias válidas e inválidas, referencias de cursos, seguimiento, CSV y módulos deshabilitados. `npm ci` usa el lock versionado. No se prueban funcionalidades retiradas de regalos.
+`npm test` comprueba registros comerciales, composición/codificación de la solicitud, copias válidas e inválidas, referencias de cursos, seguimiento, CSV y módulos deshabilitados. `npm ci` usa el lock versionado.
 
-La ejecución previa de la suite heredada dio 6 aprobadas y 1 fallida por el acceso administrativo (esperaba 401; recibía el formulario con 200). Detalles en [análisis](ANALISIS-PROYECTO.md).
 
 Claves, `.env`, certificados, keystores, archivos de firma, bases, APKs, cachés y dependencias quedan fuera de Git. No se copian bases ni registros reales. La imagen Docker admite únicamente los archivos compilados y la configuración Nginx.

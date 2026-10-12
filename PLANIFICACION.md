@@ -476,7 +476,7 @@ El precio final debe definirse después de revisar el alcance. Los valores “de
 
 ## 15. Próximo objetivo técnico
 
-El siguiente trabajo será reemplazar la identidad actual de Orbit Joy por Orbit Soft y construir una primera versión de la página comercial, sin eliminar todavía la lógica reutilizable del backend.
+La web comercial y primera plantilla offline están implementadas. El siguiente objetivo es validar el APK en un teléfono y realizar una adaptación a un cliente.
 
 La primera entrega debe incluir:
 
@@ -503,12 +503,12 @@ Esta sección sustituye las decisiones pendientes y el próximo objetivo de las 
 - Núcleo reutilizable: dominio, reportes, configuración visual y contratos opcionales de sesión/usuarios/roles. Autenticación real y colaboración continúan pendientes.
 - Backend futuro: esqueleto FastAPI y conectores explícitos SQLAlchemy PostgreSQL/MySQL. No se despliega ni crea datos en esta fase.
 - Referencias comerciales: web desde S/ 300, Campus Planner desde S/ 350; otras referencias/plazos en el catálogo. Son orientativas, el alcance debe cotizarse. Solo Campus Planner tiene demo funcional.
-- Publicación autorizada: AWS en /home/ec2-user/orbit-soft; contenedor Nginx separado, ingreso HTTP por hostname/IP autorizados, preservando los servicios anteriores. Esta decisión sustituye la publicación gratuita externa del plan inicial. HTTPS propio requiere dominio/certificado y queda pendiente.
+- Publicación autorizada: AWS en /home/ec2-user/orbit-soft; un único contenedor Nginx atendiendo directamente el puerto 80, bajo /orbit-soft/ y sin otras aplicaciones desplegadas. Esta decisión sustituye la publicación gratuita externa del plan inicial. HTTPS propio requiere dominio/certificado y queda pendiente.
 - Sin pagos, usuarios comerciales, panel administrativo ni hosting de clientes. La app no solicita permiso INTERNET y deshabilita backup automático Android.
 - Generación y sincronización nativa comprobadas. Compilar, firmar e instalar APK en teléfono requiere JDK 21/SDK 36 no disponibles en este equipo; la comprobación nativa se documenta como pendiente, no como entrega realizada.
 
 Siguientes pasos: verificar plantilla en teléfono Android, construir APK firmado, revisar referencias comerciales con un piloto y configurar dominio/HTTPS. La sincronización solo se habilitará con una necesidad concreta de compartir datos.
 
-## 17. Separación de proyectos en AWS
+## 17. Despliegue exclusivo en AWS
 
-Orbit Soft se publica en http://18.224.68.11/orbit-soft/ y en el mismo prefijo del hostname AWS autorizado. Orbit Joy conserva la raíz y sus contenedores/datos, sin eliminación. El proxy retira /orbit-soft/ antes de servir el sitio estático; fichas, recursos, formulario y demo mantienen enlaces relativos. La administración de Orbit Joy no se expone por HTTP. Este ajuste sustituye la URL raíz de Orbit Soft indicada anteriormente.
+Orbit Soft es el único proyecto de aplicación de la instancia. Nginx atiende el puerto 80 y sirve http://18.224.68.11/orbit-soft/ (también por hostname). La raíz redirige a esa ruta. Se retiran servicios, contenedores, datos, certificados, carpetas y configuraciones de la aplicación sustituida, sin conservarla activa ni como respaldo en el servidor. HTTPS propio sigue pendiente.
