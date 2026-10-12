@@ -508,3 +508,7 @@ Esta sección sustituye las decisiones pendientes y el próximo objetivo de las 
 - Generación y sincronización nativa comprobadas. Compilar, firmar e instalar APK en teléfono requiere JDK 21/SDK 36 no disponibles en este equipo; la comprobación nativa se documenta como pendiente, no como entrega realizada.
 
 Siguientes pasos: verificar plantilla en teléfono Android, construir APK firmado, revisar referencias comerciales con un piloto y configurar dominio/HTTPS. La sincronización solo se habilitará con una necesidad concreta de compartir datos.
+
+## 17. Separación de proyectos en AWS
+
+Orbit Soft se publica en http://18.224.68.11/orbit-soft/ y en el mismo prefijo del hostname AWS autorizado. Orbit Joy conserva la raíz y sus contenedores/datos, sin eliminación. El proxy retira /orbit-soft/ antes de servir el sitio estático; fichas, recursos, formulario y demo mantienen enlaces relativos. La administración de Orbit Joy no se expone por HTTP. Este ajuste sustituye la URL raíz de Orbit Soft indicada anteriormente.

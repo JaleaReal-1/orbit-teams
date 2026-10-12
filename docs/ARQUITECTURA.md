@@ -25,4 +25,4 @@ Almacenamiento individual para un MVP pequeño (hasta 500 registros por módulo)
 
 Para agregar una plantilla: crear otra app bajo `apps/mobile`, cambiar appId/nombre/recursos, definir módulos y campos, reutilizar validación/repositorio/reportes y acordar el alcance. Un APK por cliente requiere identidad y firma de actualización propias, conservadas fuera de Git.
 
-AWS publica únicamente `dist/web`, incluida la demo compilada de navegador. El contenedor no contiene el backend, claves ni bases. `/health.json` identifica el commit del paquete construido.
+AWS publica únicamente `dist/web`, incluida la demo compilada de navegador, bajo `/orbit-soft/`. El contenedor no contiene el backend, claves ni bases. `/orbit-soft/health.json` identifica públicamente el commit del paquete construido; dentro del contenedor es `/health.json`. Nginx retira el prefijo público y todos los enlaces de web/demo son relativos, manteniendo el producto Android independiente de esa ruta.

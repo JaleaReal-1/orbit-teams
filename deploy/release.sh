@@ -24,7 +24,7 @@ fi
 sudo docker exec orbitjoy-web-1 nginx -s reload
 verified=false
 for attempt in {1..10}; do
-  if curl --fail --silent -H 'Host: ec2-18-224-68-11.us-east-2.compute.amazonaws.com' http://127.0.0.1/health.json | grep -q "$commit"; then
+  if curl --fail --silent -H 'Host: ec2-18-224-68-11.us-east-2.compute.amazonaws.com' http://127.0.0.1/orbit-soft/health.json | grep -q "$commit"; then
     verified=true
     break
   fi

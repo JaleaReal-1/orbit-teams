@@ -58,7 +58,7 @@ Consultar [Android](docs/ANDROID.md) para producir y firmar el APK. Se generó/s
 
 [Arquitectura](docs/ARQUITECTURA.md), [despliegue AWS](docs/DESPLIEGUE.md) y [planificación](PLANIFICACION.md). Solo se despliega la web estática y su demo; el backend futuro está deshabilitado. Roles, usuarios y proveedor de autenticación existen como contratos opcionales del núcleo, sin login real ni garantías de seguridad de servidor.
 
-Destino AWS: `/home/ec2-user/orbit-soft`. URL inicial HTTP: http://ec2-18-224-68-11.us-east-2.compute.amazonaws.com/ . `/health.json` identifica el commit del build. HTTPS propio pendiente de dominio/certificado; se mantienen las rutas y datos previos de Orbit Joy en AWS.
+Destino AWS: `/home/ec2-user/orbit-soft`. URL principal HTTP: http://18.224.68.11/orbit-soft/ (también funciona el hostname AWS con ese prefijo). `/orbit-soft/health.json` identifica el commit del build publicado. Nginx retira el prefijo al consultar el contenedor estático, por lo que la web y la demo usan enlaces relativos sin cambios. Orbit Joy conserva la raíz pública y sus servicios/datos; su administración se bloquea por HTTP. HTTPS propio pendiente de dominio/certificado.
 
 ## Validación y privacidad
 
