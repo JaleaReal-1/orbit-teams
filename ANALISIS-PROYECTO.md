@@ -56,3 +56,13 @@ Se ampliaron `.gitignore` y `.dockerignore` para excluir la clave PEM presente e
 Dependencias instaladas en `.venv`; `pip check` no encontró incompatibilidades declaradas. Resultado de `pytest -q tests`: **6 pruebas aprobadas y 1 fallida**. La prueba `test_payment_gate_admin_auth_and_escaping` espera HTTP 401 al abrir `/admin` sin sesión, pero el código actual redirige al formulario de acceso y el cliente de pruebas sigue esa redirección hasta HTTP 200. Esa prueba se detiene allí, por lo que sus comprobaciones posteriores no quedaron verificadas en esta ejecución. Se conserva el código y la prueba originales para revisar este desfase en el siguiente desarrollo.
 
 Se ejecutó Python con `PYTHONUTF8=1`, necesario para leer las plantillas UTF-8 con la configuración de Windows utilizada. Las versiones instaladas son las permitidas actualmente por los rangos, no una reproducción exacta de las versiones de producción.
+
+## Actualización: reestructuración Orbit Soft (12 octubre 2026)
+
+Se revisó el producto de regalos completo. La lógica de órdenes, dedicatorias, fotos, pagos, enlaces cortos y administración se retiró del árbol activo porque no corresponde a la nueva oferta. Su versión original es recuperable mediante el commit a312e38; no se conserva una aplicación heredada ejecutable en producción de Orbit Soft. La base y los servicios anteriores en AWS no se migran.
+
+Reutilizado: estructura de despliegue Docker/Nginx, separación de almacenamiento e interfaz como criterio de arquitectura y número público de WhatsApp. Nuevos: web estática, catálogo de datos, solicitud por WhatsApp, plantilla Android Campus Planner con Capacitor, núcleo de dominio/reportes y esqueleto futuro FastAPI.
+
+Se ejecutaron nuevamente las siete pruebas originales antes de retirarlas: 6 aprobadas y 1 fallida, test_payment_gate_admin_auth_and_escaping (401 esperado, 200 recibido tras redirección al login). La nueva suite tiene 8 pruebas, todas aprobadas. Build de interfaz y cap sync Android completados. La verificación nativa/compilación APK queda pendiente por ausencia de JDK 21 y SDK Android; hay Java 8 instalado.
+
+Despliegue preparado para carpeta separada /home/ec2-user/orbit-soft, contenedor estático en puerto interno 8082 e ingreso HTTP por el hostname AWS autorizado. La configuración HTTPS anterior apunta a 18.188.198.49: no se utiliza como certificado de Orbit Soft. Registrar dominio y HTTPS propio es el siguiente paso operativo.

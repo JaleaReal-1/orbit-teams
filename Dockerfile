@@ -1,12 +1,5 @@
-FROM python:3.12-slim
-ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt && useradd --uid 10001 --create-home orbitjoy
-COPY main.py database.py models.py schemas.py migration.py ./
-COPY static ./static
-RUN mkdir -p /app/data /app/static/uploads && chown -R orbitjoy:orbitjoy /app
-USER orbitjoy
-EXPOSE 8000
-HEALTHCHECK --interval=15s --timeout=3s --start-period=20s CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/openapi.json', timeout=2)"
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "2", "--proxy-headers"]
+FROM nginx:1.28-alpine
+COPY deploy/nginx.conf /etc/nginx/conf.d/default.conf
+COPY dist/web/ /usr/share/nginx/html/
+EXPOSE 80
+HEALTHCHECK --interval=15s --timeout=3s --start-period=5s CMD wget -q -O /dev/null http://127.0.0.1/health.json || exit 1

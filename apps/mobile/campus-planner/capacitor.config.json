@@ -1,0 +1,6 @@
+{
+  "appId": "pe.orbitsoft.campusplanner",
+  "appName": "Campus Planner",
+  "webDir": "dist",
+  "android": { "allowMixedContent": false }
+}

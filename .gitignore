@@ -6,7 +6,7 @@ static/uploads/*
 !static/uploads/.gitkeep
 
 admin-*-access.txt
-data/
+/data/
 
 certificates/
 acme/
@@ -25,3 +25,17 @@ acme/
 .pytest_cache/
 ._*
 backups/
+node_modules/
+dist/
+build/
+.gradle/
+.idea/
+local.properties
+*.jks
+*.keystore
+*.apk
+*.aab
+google-services.json
+*.log
+coverage/
+artifacts/
