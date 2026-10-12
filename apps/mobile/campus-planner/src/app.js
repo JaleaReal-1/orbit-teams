@@ -36,10 +36,10 @@ app.innerHTML = `<div class="shell"><header class="top"><div class="brand"><span
   ['notes', 'Notas'],
   ['settings', 'Ajustes'],
 ]
-  .map(([key, label]) => `<button data-tab="${key}">${label}</button>`)
+  .map(([key, label]) => `<button data-tab="${key}" disabled>${label}</button>`)
   .join(
     '',
-  )}</nav><main id="view" class="view"></main><footer class="footer">Orbit Soft · Plantilla Campus Planner<br>${Capacitor.isNativePlatform() ? 'Aplicación Android · Almacenamiento local' : 'Demo de navegador · No es una PWA'} · Sin sincronización</footer></div><dialog class="dialog" id="editor"></dialog><div id="toast" class="toast" role="status" hidden></div>`;
+  )}</nav><main id="view" class="view" aria-busy="true"><p class="notice">Abriendo tu espacio…</p></main><footer class="footer">Orbit Soft · Plantilla Campus Planner<br>${Capacitor.isNativePlatform() ? 'Aplicación Android · Almacenamiento local' : 'Demo de navegador · No es una PWA'} · Sin sincronización</footer></div><dialog class="dialog" id="editor"></dialog><div id="toast" class="toast" role="status" hidden></div>`;
 let storageFailed = false;
 try {
   state = await repository.load();
@@ -79,10 +79,12 @@ function render() {
   document.documentElement.style.setProperty('--accent', state.settings.color);
   document.querySelector('#space-name').textContent = state.settings.name;
   document.querySelectorAll('[data-tab]').forEach((b) => {
+    b.disabled = false;
     b.classList.toggle('active', b.dataset.tab === active);
     b.setAttribute('aria-current', b.dataset.tab === active ? 'page' : 'false');
   });
   const view = document.querySelector('#view');
+  view.setAttribute('aria-busy', 'false');
   if (storageFailed) {
     view.innerHTML =
       empty(
