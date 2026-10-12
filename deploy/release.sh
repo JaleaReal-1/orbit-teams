@@ -6,7 +6,7 @@ cd "$release_dir"
 commit=$(cat RELEASE_COMMIT)
 [[ "$commit" =~ ^[a-f0-9]{40}$ ]] || exit 1
 export RELEASE_COMMIT="$commit"
-sudo docker compose -p orbit-soft up -d --build --wait
+sudo env RELEASE_COMMIT="$commit" docker compose -p orbit-soft up -d --build --wait
 curl --fail --silent http://127.0.0.1:8082/health.json
 if ! sudo docker inspect orbitjoy-web-1 --format '{{json .NetworkSettings.Networks}}' | grep -q 'orbit-soft-public'; then
   sudo docker network connect orbit-soft-public orbitjoy-web-1
