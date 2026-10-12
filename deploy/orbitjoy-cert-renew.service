@@ -1,0 +1,9 @@
+[Unit]
+Description=Renew Orbit Joy HTTPS certificate and reload Nginx
+Requires=docker.service
+After=docker.service network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/ec2-user/orbitjoy/docker/deploy/renew-certificate.sh

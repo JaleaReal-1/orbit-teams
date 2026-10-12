@@ -1,0 +1,27 @@
+.env
+.venv/
+__pycache__/
+*.db
+static/uploads/*
+!static/uploads/.gitkeep
+
+admin-*-access.txt
+data/
+
+certificates/
+acme/
+
+# Claves, archivos de transferencia y datos locales
+*.pem
+*.key
+*.p12
+*.pfx
+.env.*
+!.env.example
+*.db-*
+*.sqlite
+*.sqlite3
+*.tar.gz
+.pytest_cache/
+._*
+backups/
