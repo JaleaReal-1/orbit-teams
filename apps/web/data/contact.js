@@ -1,6 +1,6 @@
 export const contact = {
-  whatsapp: '51978371277',
-  display: '+51 978 371 277',
+  whatsapp: '51938888511',
+  display: '+51 938 888 511',
   location: 'Juliaca, Perú',
 };
 export function whatsappUrl(message) {

@@ -39,7 +39,7 @@ docs/                           Arquitectura, Android y despliegue
 
 Agregar o editar soluciones en `apps/web/data/catalog.js`. Cada registro alimenta catálogo, ficha y selector de solicitud. Precios desde S/ 300 para webs y desde S/ 350 para una adaptación Android básica; referencias editoriales sujetas a alcance, sin prometer un paquete cerrado. Plazos en semanas desde la definición y recepción del contenido.
 
-WhatsApp comercial: +51 978 371 277. Cambiar `apps/web/data/contact.js` si cambia el contacto comercial. El formulario no almacena datos ni envía automáticamente: valida, prepara un mensaje, permite revisarlo/copiarlo y abre WhatsApp al elegir Enviar.
+WhatsApp comercial: +51 938 888 511. Cambiar `apps/web/data/contact.js` si cambia el contacto comercial. El formulario no almacena datos ni envía automáticamente: valida, prepara un mensaje, permite revisarlo/copiarlo y abre WhatsApp al elegir Enviar.
 
 Campus Planner es la única demo funcional. Las demás fichas son propuestas de adaptación por encargo, no apps ya terminadas. No se inventan clientes, testimonios ni trabajos entregados.
 
