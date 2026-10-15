@@ -8,7 +8,7 @@
       name="description"
       content="Desarrollamos páginas web, portafolios, aplicaciones Android y sistemas personalizados para negocios y universitarios de Juliaca. Atención online."
     />
-    <meta name="theme-color" content="#10131c" />
+    <meta name="theme-color" content="#07171a" />
     <meta property="og:title" content="JaleaSec | Desarrollo de software en Juliaca" />
     <meta
       property="og:description"
@@ -23,16 +23,19 @@
     <header class="header">
       <div class="container nav">
         <a class="brand" href="./" aria-label="JaleaSec, inicio"
-          ><img src="./assets/jaleasec.svg" alt="" width="34" height="34" />JaleaSec</a
-        >
-        <button class="menu-toggle" aria-expanded="false" aria-controls="navigation">
-          Menú <span>☰</span>
+          ><img src="./assets/jaleasec.svg" alt="" width="40" height="40" /><span
+            >JaleaSec<small>ESTUDIO DIGITAL · JULIACA</small></span
+          ></a
+        ><button class="menu-toggle" aria-expanded="false" aria-controls="navigation">
+          Menú <span aria-hidden="true">☰</span>
         </button>
         <nav id="navigation" aria-label="Navegación principal">
-          <a href="./negocios.html">Negocios</a><a href="./universitarios.html">Universitarios</a
-          ><a href="#soluciones">Soluciones</a><a href="#proceso">Cómo trabajamos</a
-          ><a href="#demos">Demos</a
-          ><a class="button small" href="#solicitud">Hablemos <span>↗</span></a>
+          <a href="./" aria-current="page">Inicio</a><a href="./negocios.html">Negocios</a
+          ><a href="./universitarios.html">Universitarios</a><a href="./proyectos.html">Proyectos</a
+          ><a href="./#soluciones">Soluciones</a
+          ><a class="button small" href="./#solicitud"
+            >Conversemos <span aria-hidden="true">↗</span></a
+          >
         </nav>
       </div>
     </header>
@@ -40,9 +43,9 @@
       <section class="hero container" id="inicio">
         <div class="hero-copy">
           <p class="eyebrow">
-            <span class="live-dot"></span> JALEASEC · DESARROLLO DE SOFTWARE · JULIACA, PERÚ
+            <span class="live-dot"></span> 01 / DESARROLLO DE SOFTWARE · JULIACA
           </p>
-          <h1>Creamos soluciones digitales para tus ideas <em>y tu negocio.</em></h1>
+          <h1>Tus ideas,<br /><em>hechas software.</em></h1>
           <p class="hero-text">
             Desarrollamos páginas web, aplicaciones Android y sistemas personalizados para
             universitarios y negocios de Juliaca. Atención online y soluciones definidas según tus
@@ -50,27 +53,45 @@
           </p>
           <div class="actions">
             <a class="button whatsapp-link" href="#">Cuéntanos tu proyecto <span>↗</span></a
-            ><a class="text-link" href="#publicos">Explorar soluciones <span>→</span></a>
+            ><a class="button outline" href="#publicos">Explorar soluciones <span>→</span></a>
           </div>
-          <p class="hero-proof">
-            Atención online · Juliaca, Perú<br />Desarrollo con alcance acordado.
-          </p>
+          <p class="hero-proof">Atención online · Juliaca, Perú · Alcance acordado.</p>
         </div>
-        <aside class="hero-offers service featured">
-          <p class="eyebrow">EMPIEZA CON LO ESENCIAL</p>
-          <h2>Una web que cuente<br />lo que haces.</h2>
-          <p>Presenta tus servicios, comparte tus proyectos y facilita el contacto.</p>
-          <div class="demo-tags">
-            <span>Web para negocio</span><span>Portafolio universitario</span>
+        <figure class="product-preview">
+          <div class="browser-window">
+            <div class="browser-chrome">
+              <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span
+              ><span>concepto / web para negocio</span>
+            </div>
+            <div
+              class="preview-screen preview-business"
+              role="group"
+              aria-label="Web para un negocio ficticio"
+            >
+              <div class="preview-brand">
+                norte<span>ESTUDIO LOCAL</span><b aria-hidden="true">↗</b>
+              </div>
+              <p class="preview-kicker">SERVICIOS / JULIACA</p>
+              <p class="preview-title">Un espacio para<br />hacerte notar.</p>
+              <p>Lo que hacemos.<br />Cómo podemos ayudarte.</p>
+              <div class="preview-bottom">
+                <span class="preview-cta">Hablemos de tu idea ↗</span
+                ><span class="preview-monogram" aria-hidden="true">n.</span>
+              </div>
+              <div class="preview-services">
+                <span>Diseño</span><span>Servicios</span><span>Contacto</span>
+              </div>
+            </div>
           </div>
-          <a class="text-link" href="#servicios">Conocer las ofertas ↗</a>
-        </aside>
+          <figcaption>CONCEPTO FICTICIO · NO ES UN CLIENTE</figcaption>
+        </figure>
       </section>
       <section class="section container" id="publicos" aria-labelledby="publicos-title">
-        <p class="eyebrow">SOLUCIONES PARA TI</p>
-        <h2 id="publicos-title">¿Qué quieres poner en marcha?</h2>
+        <p class="eyebrow">02 / ELIGE TU PUNTO DE PARTIDA</p>
+        <h2 id="publicos-title">Un punto de partida<br />para cada proyecto.</h2>
         <div class="audience-grid">
           <article class="service">
+            <p class="eyebrow">01 — NEGOCIOS LOCALES</p>
             <h3>Tengo un negocio</h3>
             <p>
               Una web para presentar tus servicios o una herramienta digital para organizar mejor tu
@@ -79,6 +100,7 @@
             <a class="button" href="./negocios.html">Ver soluciones para negocios ↗</a>
           </article>
           <article class="service">
+            <p class="eyebrow">02 — UNIVERSITARIOS</p>
             <h3>Soy universitario</h3>
             <p>
               Portafolios web, proyectos personales y herramientas digitales para tu vida
@@ -89,7 +111,7 @@
         </div>
       </section>
       <section class="section container about" id="nosotros">
-        <p class="eyebrow">01 / CONOCE JALEASEC</p>
+        <p class="eyebrow">DESARROLLAMOS CONTIGO</p>
         <div>
           <h2>Menos complicaciones.<br /><span>Más posibilidades.</span></h2>
           <p>
@@ -111,7 +133,7 @@
         <div class="container">
           <div class="section-heading">
             <div>
-              <p class="eyebrow">02 / LO QUE PODEMOS CREAR</p>
+              <p class="eyebrow">03 / LO QUE PODEMOS CREAR</p>
               <h2>El formato correcto<br />para tu proyecto.</h2>
             </div>
             <p>Empieza con lo que necesitas hoy.<br />Construyamos el siguiente paso juntos.</p>
@@ -131,7 +153,7 @@
       <section class="section container" id="soluciones">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">03 / CATÁLOGO DE SOLUCIONES</p>
+            <p class="eyebrow">04 / SOLUCIONES POR ENCARGO</p>
             <h2>Ideas para tu siguiente paso.<br /><span>Desarrollo por encargo.</span></h2>
           </div>
           <p>
@@ -146,6 +168,7 @@
           ><button data-filter="Otras" aria-pressed="false">Más soluciones por encargo</button
           ><button data-filter="Todas" aria-pressed="false">Todas</button>
         </div>
+        <p id="catalog-status" class="catalog-count" role="status"></p>
         <div class="catalog-grid" id="catalog"></div>
         <p class="pricing-note">
           Campus Planner tiene una demo funcional. Las demás soluciones describen el alcance
@@ -153,78 +176,59 @@
         </p>
       </section>
       <section class="section demo-section" id="demos">
-        <div class="container demo-grid">
-          <div>
-            <p class="eyebrow">04 / PROYECTOS Y DEMOSTRACIONES</p>
-            <h2>Campus Planner.<br />Demo funcional.</h2>
-            <p>
-              Conoce Campus Planner: cursos, horarios, tareas y notas en una primera plantilla
-              pensada para Android.
-            </p>
-            <div class="demo-tags">
-              <span>Android primero</span><span>Datos locales</span><span>Sin cuentas</span>
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">05 / PROYECTOS Y DEMOSTRACIONES</p>
+              <h2>Ideas que puedes<br /><em>explorar.</em></h2>
             </div>
-            <a class="button" href="./demos/campus-planner/" target="_blank" rel="noopener"
-              >Abrir demo interactiva <span>↗</span></a
-            >
-            <p class="demo-disclaimer">
-              Demo de navegador con datos ficticios y almacenamiento local, sin sincronización. La
-              vista del teléfono es ilustrativa; abre la demo para probar las funciones reales. No
-              ingreses datos sensibles.
-            </p>
+            <p>Una demo funcional y dos conceptos visuales. Cada propuesta, con su estado real.</p>
           </div>
-          <div class="hero-art" aria-label="Vista ilustrativa de Campus Planner">
-            <div class="orbit orbit-one"></div>
-            <div class="orbit orbit-two"></div>
-            <span class="planet planet-one"></span><span class="planet planet-two"></span>
-            <div class="floating-label label-top">
-              <span>✦</span> Una idea. Muchas posibilidades.
-            </div>
-            <div class="phone">
-              <div class="phone-top">9:41 <span>▮▮▮ ▰</span></div>
-              <div class="phone-content">
-                <div class="app-brand"><span>◈</span> Campus Planner <i>•••</i></div>
-                <p class="phone-greeting">TU ESPACIO ACADÉMICO</p>
-                <h3>Hola, Alex <span>✳</span></h3>
-                <p class="muted">Un paso más cerca de tus metas.</p>
-                <div class="week">
-                  <span>L<small>12</small></span
-                  ><span class="selected">M<small>13</small></span
-                  ><span>M<small>14</small></span
-                  ><span>J<small>15</small></span
-                  ><span>V<small>16</small></span>
-                </div>
-                <div class="phone-heading">Tu día <span>2 actividades</span></div>
-                <div class="phone-course">
-                  <small>09:00 — 10:30</small><strong>Diseño de interfaces</strong
-                  ><span>Aula B-204 · Teoría</span><i>↗</i>
-                </div>
-                <div class="phone-task">
-                  <span class="check">✓</span>
-                  <div><strong>Revisar propuesta</strong><small>Proyecto de innovación</small></div>
-                </div>
-                <div class="progress-panel">
-                  <span>Así va tu semana <b>75%</b></span>
-                  <div><i></i></div>
-                  <small>Tu constancia hace la diferencia.</small>
-                </div>
-                <div class="phone-bottom">
-                  <span>⌂</span><span>▦</span><span>☑</span><span>☷</span>
-                </div>
-              </div>
-            </div>
-            <div class="floating-label label-bottom">
-              <span class="offline-icon">✓</span>
-              <div><strong>Tu app, contigo.</strong><small>También sin internet.</small></div>
-            </div>
-            <span class="art-caption">CAMPUS PLANNER / VISTA ILUSTRATIVA</span>
+          <div class="project-grid">
+            <article class="project-card">
+              <div class="project-symbol planner-symbol" aria-hidden="true">◈</div>
+              <p class="eyebrow">DEMO FUNCIONAL</p>
+              <h3>Campus Planner</h3>
+              <p>
+                Cursos, horarios, tareas y notas con almacenamiento local. Datos ficticios; sin
+                sincronización.
+              </p>
+              <p class="project-tech">Vite · Capacitor · Uso local</p>
+              <a class="card-link" href="./demos/campus-planner/">Probar la demo ↗</a>
+            </article>
+            <article class="project-card">
+              <div class="project-symbol business-symbol" aria-hidden="true">n.</div>
+              <p class="eyebrow">CONCEPTO FICTICIO</p>
+              <h3>Web para un negocio</h3>
+              <p>
+                Una propuesta visual de servicios y contacto. No representa un trabajo entregado a
+                un cliente.
+              </p>
+              <p class="project-tech">HTML · CSS · Diseño adaptable</p>
+              <a class="card-link" href="./proyectos.html#web-negocio">Explorar el concepto ↗</a>
+            </article>
+            <article class="project-card">
+              <div class="project-symbol portfolio-symbol" aria-hidden="true">SR /</div>
+              <p class="eyebrow">CONCEPTO FICTICIO</p>
+              <h3>Portafolio universitario</h3>
+              <p>
+                Una presentación personal de ejemplo. Perfil y proyectos ficticios, sin atribución a
+                un cliente.
+              </p>
+              <p class="project-tech">HTML · CSS · Presentación personal</p>
+              <a class="card-link" href="./proyectos.html#portafolio">Explorar el concepto ↗</a>
+            </article>
+          </div>
+          <div class="section-end">
+            <p>Los conceptos son representaciones visuales, sin reservas, pagos ni envíos.</p>
+            <a class="button outline" href="./proyectos.html">Ver proyectos y conceptos ↗</a>
           </div>
         </div>
       </section>
       <section class="section container" id="proceso">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">05 / UN PROCESO CLARO</p>
+            <p class="eyebrow">06 / UN PROCESO CLARO</p>
             <h2>De la conversación<br />a tu primera versión.</h2>
           </div>
           <p>Sin promesas ambiguas.<br />Con decisiones compartidas.</p>
@@ -257,7 +261,7 @@
       </section>
       <section class="section container faq-section" id="preguntas">
         <div>
-          <p class="eyebrow">06 / ANTES DE EMPEZAR</p>
+          <p class="eyebrow">07 / ANTES DE EMPEZAR</p>
           <h2>Todo claro.<br /><span>Desde el inicio.</span></h2>
           <p>Una buena solución comienza<br />con buenas preguntas.</p>
         </div>
@@ -335,7 +339,7 @@
       <section class="section request-section" id="solicitud">
         <div class="container request-grid">
           <div class="request-copy">
-            <p class="eyebrow">07 / PONGAMOS TU IDEA EN MARCHA</p>
+            <p class="eyebrow">08 / CONSTRUYAMOS TU SIGUIENTE PASO</p>
             <h2>Cuéntanos<br />qué necesitas.<span class="accent">↗</span></h2>
             <p>
               No necesitas tener todo resuelto. Con unas pocas respuestas podemos empezar a definir
@@ -354,6 +358,10 @@
             <a class="text-link whatsapp-link" href="#">Prefiero hablar por WhatsApp ↗</a>
           </div>
           <form id="request-form">
+            <div class="form-heading">
+              <span class="eyebrow">CONTACTO / NUEVO PROYECTO</span>
+              <p>Prepara tu mensaje. Tú decides cuándo enviarlo.</p>
+            </div>
             <div class="form-grid">
               <label
                 >Tu nombre<input name="name" autocomplete="name" required maxlength="100"
@@ -443,14 +451,16 @@
     <footer>
       <div class="container footer-top">
         <a class="brand" href="./"
-          ><img src="./assets/jaleasec.svg" alt="" width="34" height="34" />JaleaSec</a
+          ><img src="./assets/jaleasec.svg" alt="" width="40" height="40" /><span
+            >JaleaSec<small>ESTUDIO DIGITAL · JULIACA</small></span
+          ></a
         >
-        <p>Software cercano.<br />Ideas que llegan más lejos.</p>
+        <p>Desarrollo de software.<br />Ideas que toman forma.</p>
         <a class="text-link whatsapp-link" href="#">Conversemos ↗</a>
       </div>
       <div class="container footer-bottom">
-        <span>© <span id="year">2026</span> JaleaSec · Juliaca, Perú</span
-        ><a href="./privacidad.html">Privacidad</a><span>Hecho para lo que viene. ✦</span>
+        <span>© <span id="year">2026</span> JaleaSec · Juliaca, Perú · Atención online</span
+        ><a href="./proyectos.html">Proyectos</a><a href="./privacidad.html">Privacidad</a>
       </div>
     </footer>
     <a class="whatsapp-float whatsapp-link" href="#" aria-label="Contactar a JaleaSec por WhatsApp"

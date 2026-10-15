@@ -4,6 +4,8 @@ JaleaSec es una marca digital de desarrollo de software con atención online par
 
 La web usa HTML, CSS y JavaScript nativo, con páginas estáticas para negocios y universitarios, catálogo de propuestas y solicitud revisable por WhatsApp. Campus Planner sigue siendo la única demo funcional.
 
+El diseño comercial Tech Lab comparte tipografía, paneles y navegación entre Inicio, Negocios, Universitarios, Proyectos, fichas y privacidad. `/proyectos.html` distingue la demo funcional de los conceptos ficticios. Consulta [diseño y validación Tech Lab](docs/TECH-LAB.md) para revisar los cambios localmente.
+
 Los nombres npm, workspace, Android, recursos AWS y rutas `/orbit-soft/` son identificadores operativos heredados; se mantienen sin migración. El dominio indicado es `jaleasec.tech`; canonical y sitemap quedan pendientes de confirmar su ruta pública real. No se ha modificado infraestructura con este reposicionamiento.
 
 ## Ejecutar

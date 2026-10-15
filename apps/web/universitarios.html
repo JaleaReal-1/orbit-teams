@@ -8,7 +8,7 @@
       name="description"
       content="Portafolios web, sitios para iniciativas y herramientas personales para universitarios de Juliaca. Desarrollo de software JaleaSec con atención online."
     />
-    <meta name="theme-color" content="#10131c" />
+    <meta name="theme-color" content="#07171a" />
     <meta property="og:title" content="JaleaSec | Portafolios y software para universitarios" />
     <meta
       property="og:description"
@@ -23,34 +23,70 @@
     <header class="header">
       <div class="container nav">
         <a class="brand" href="./" aria-label="JaleaSec, inicio"
-          ><img src="./assets/jaleasec.svg" width="34" height="34" alt="" />JaleaSec</a
+          ><img src="./assets/jaleasec.svg" alt="" width="40" height="40" /><span
+            >JaleaSec<small>ESTUDIO DIGITAL · JULIACA</small></span
+          ></a
         ><button class="menu-toggle" aria-expanded="false" aria-controls="navigation">
-          Menú ☰
+          Menú <span aria-hidden="true">☰</span>
         </button>
         <nav id="navigation" aria-label="Navegación principal">
-          <a href="./negocios.html">Negocios</a
+          <a href="./">Inicio</a><a href="./negocios.html">Negocios</a
           ><a href="./universitarios.html" aria-current="page">Universitarios</a
-          ><a href="./#soluciones">Soluciones</a
-          ><a href="./#solicitud" class="button small">Solicitud ↗</a>
+          ><a href="./proyectos.html">Proyectos</a><a href="./#soluciones">Soluciones</a
+          ><a class="button small" href="./#solicitud"
+            >Conversemos <span aria-hidden="true">↗</span></a
+          >
         </nav>
       </div>
     </header>
     <main id="main">
-      <section class="container segment-hero">
-        <p class="eyebrow">JALEASEC · UNIVERSITARIOS · ATENCIÓN ONLINE</p>
-        <h1>Portafolios y software para universitarios.</h1>
-        <p>
-          Presenta tus proyectos, da a conocer una iniciativa o explora una herramienta para
-          organizar tu vida universitaria.
-        </p>
-        <div class="actions">
-          <a
-            class="button whatsapp-link"
-            data-message="Hola, JaleaSec. Soy universitario y quiero consultar por un portafolio o proyecto de software."
-            href="#"
-            >Cuéntanos tu proyecto ↗</a
-          ><a class="text-link" href="./#solicitud">Preparar una solicitud detallada →</a>
+      <section class="container hero segment-hero">
+        <div class="hero-copy">
+          <p class="eyebrow">01 / UNIVERSITARIOS</p>
+          <h1>Muestra tu trabajo.<br /><em>Abre oportunidades.</em></h1>
+          <p class="hero-text">
+            Presenta tus proyectos, da a conocer una iniciativa o explora una herramienta para
+            organizar tu vida universitaria.
+          </p>
+          <div class="actions">
+            <a
+              class="button whatsapp-link"
+              data-message="Hola, JaleaSec. Soy universitario y quiero consultar por un portafolio o proyecto de software."
+              href="#"
+              >Cuéntanos tu proyecto ↗</a
+            ><a class="button outline" href="./#solicitud">Preparar solicitud →</a>
+          </div>
+          <p class="hero-proof">
+            <span class="live-dot" aria-hidden="true"></span>Marca independiente · Atención online
+          </p>
         </div>
+        <figure class="product-preview">
+          <div class="browser-window">
+            <div class="browser-chrome">
+              <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span
+              ><span>concepto / portafolio universitario</span>
+            </div>
+            <div
+              class="preview-screen preview-portfolio"
+              role="group"
+              aria-label="Portafolio de una estudiante ficticia"
+            >
+              <div class="preview-brand">
+                Sofía R.<span>PORTAFOLIO PERSONAL</span><b aria-hidden="true">✳</b>
+              </div>
+              <p class="preview-kicker">HOLA, SOY SOFÍA / PERFIL FICTICIO</p>
+              <p class="preview-title">Ideas que toman<br />forma digital.</p>
+              <p>Mis proyectos, habilidades<br />y lo que quiero construir.</p>
+              <div class="preview-services">
+                <span>JavaScript</span><span>Diseño</span><span>Python</span>
+              </div>
+              <div class="preview-projects">
+                <span>01 / Proyectos ↗</span><span>02 / Sobre mí ↗</span>
+              </div>
+            </div>
+          </div>
+          <figcaption>CONCEPTO FICTICIO · PERFIL DE EJEMPLO</figcaption>
+        </figure>
       </section>
       <section class="section container about">
         <p class="eyebrow">TU PUNTO DE PARTIDA</p>
@@ -71,19 +107,24 @@
         <div class="container">
           <p class="eyebrow">OFERTA INICIAL</p>
           <h2>Una primera versión clara.</h2>
-          <div class="service-grid" id="initial-offers" data-segment="Universitarios"></div>
+          <div class="offer-layout">
+            <div class="service-grid" id="initial-offers" data-segment="Universitarios"></div>
+            <aside class="service additional-offer">
+              <p class="eyebrow">EVOLUCIÓN / BAJO EVALUACIÓN</p>
+              <h3 class="additional-title">Apps Android y sistemas a medida</h3>
+              <p>
+                Campus Planner permite probar cursos, horarios, tareas y notas. Si necesitas una
+                adaptación Android o una app propia, evaluamos las funciones antes de cotizar.
+              </p>
+              <p class="pricing-note">
+                Adaptación Android básica <span data-android-price></span>. Precio y plazo finales
+                sujetos a evaluación, sin sincronización ni pagos incluidos automáticamente.
+              </p>
+            </aside>
+          </div>
           <p class="pricing-note">
             Precios orientativos y sujetos a alcance. Dominio, hosting y servicios externos se
             acuerdan aparte.
-          </p>
-          <h3 class="additional-title">Apps Android y sistemas a medida</h3>
-          <p>
-            Campus Planner permite probar cursos, horarios, tareas y notas. Si necesitas una
-            adaptación Android o una app propia, evaluamos las funciones antes de cotizar.
-          </p>
-          <p class="pricing-note">
-            Adaptación Android básica <span data-android-price></span>. Precio y plazo finales
-            sujetos a evaluación, sin sincronización ni pagos incluidos automáticamente.
           </p>
         </div>
       </section>
@@ -99,6 +140,10 @@
           >Abrir Campus Planner ↗</a
         >
       </section>
+      <div class="container section-end">
+        <p>Conoce también los conceptos visuales, con su alcance y estado.</p>
+        <a class="button outline" href="./proyectos.html">Explorar proyectos ↗</a>
+      </div>
       <section class="section container">
         <p class="eyebrow">CÓMO TRABAJAMOS</p>
         <h2>De la idea al alcance acordado.</h2>
@@ -159,7 +204,8 @@
           </details>
         </div>
       </section>
-      <section class="section container">
+      <section class="section container contact-cta">
+        <p class="eyebrow">SIGUIENTE PASO</p>
         <h2>Hablemos de tu idea.</h2>
         <p class="segment-intro">
           Puedes empezar con una conversación, sin tener todos los detalles definidos.
@@ -175,9 +221,18 @@
       </section>
     </main>
     <footer>
+      <div class="container footer-top">
+        <a class="brand" href="./"
+          ><img src="./assets/jaleasec.svg" alt="" width="40" height="40" /><span
+            >JaleaSec<small>ESTUDIO DIGITAL · JULIACA</small></span
+          ></a
+        >
+        <p>Desarrollo de software.<br />Ideas que toman forma.</p>
+        <a class="text-link whatsapp-link" href="#">Conversemos ↗</a>
+      </div>
       <div class="container footer-bottom">
-        <span>JaleaSec · Juliaca, Perú · Atención online</span><a href="./">Inicio</a
-        ><a href="./privacidad.html">Privacidad</a>
+        <span>© <span id="year">2026</span> JaleaSec · Juliaca, Perú · Atención online</span
+        ><a href="./proyectos.html">Proyectos</a><a href="./privacidad.html">Privacidad</a>
       </div>
     </footer>
     <script type="module" src="./app.js"></script>

@@ -14,6 +14,7 @@
       content="Propuestas de software por encargo y demo Campus Planner."
     />
     <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#07171a" />
     <link rel="icon" href="./assets/jaleasec.svg" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -21,18 +22,40 @@
     <a class="skip" href="#detail">Ir al contenido</a>
     <header class="header">
       <div class="container nav">
-        <a class="brand" href="./"
-          ><img src="./assets/jaleasec.svg" width="34" height="34" alt="" />JaleaSec</a
-        ><a class="button small" href="./#solicitud">Hablemos ↗</a>
+        <a class="brand" href="./" aria-label="JaleaSec, inicio"
+          ><img src="./assets/jaleasec.svg" alt="" width="40" height="40" /><span
+            >JaleaSec<small>ESTUDIO DIGITAL · JULIACA</small></span
+          ></a
+        ><button class="menu-toggle" aria-expanded="false" aria-controls="navigation">
+          Menú <span aria-hidden="true">☰</span>
+        </button>
+        <nav id="navigation" aria-label="Navegación principal">
+          <a href="./">Inicio</a><a href="./negocios.html">Negocios</a
+          ><a href="./universitarios.html">Universitarios</a><a href="./proyectos.html">Proyectos</a
+          ><a href="./#soluciones" aria-current="page">Soluciones</a
+          ><a class="button small" href="./#solicitud"
+            >Conversemos <span aria-hidden="true">↗</span></a
+          >
+        </nav>
       </div>
     </header>
     <main id="detail" class="container"></main>
     <footer>
+      <div class="container footer-top">
+        <a class="brand" href="./"
+          ><img src="./assets/jaleasec.svg" alt="" width="40" height="40" /><span
+            >JaleaSec<small>ESTUDIO DIGITAL · JULIACA</small></span
+          ></a
+        >
+        <p>Desarrollo de software.<br />Ideas que toman forma.</p>
+        <a class="text-link whatsapp-link" href="#">Conversemos ↗</a>
+      </div>
       <div class="container footer-bottom">
-        <span>JaleaSec · Juliaca, Perú</span><a href="./privacidad.html">Privacidad</a
-        ><a href="./#soluciones">Catálogo ↗</a>
+        <span>© <span id="year">2026</span> JaleaSec · Juliaca, Perú · Atención online</span
+        ><a href="./proyectos.html">Proyectos</a><a href="./privacidad.html">Privacidad</a>
       </div>
     </footer>
+    <script type="module" src="./app.js"></script>
     <script type="module" src="./detail.js"></script>
   </body>
 </html>

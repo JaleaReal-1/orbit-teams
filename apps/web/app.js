@@ -1,7 +1,9 @@
+import { revealSections } from './lib/reveal.js';
 import { solutions, offers, androidPrice, filterSolutions } from './data/catalog.js';
 import { whatsappUrl } from './data/contact.js';
 import { requestMessage } from './lib/request.js';
 const menu = document.querySelector('.menu-toggle');
+if (menu) document.querySelector('.header')?.classList.add('menu-ready');
 menu?.addEventListener('click', () => {
   const expanded = menu.getAttribute('aria-expanded') !== 'true';
   menu.setAttribute('aria-expanded', String(expanded));
@@ -22,8 +24,9 @@ document.querySelectorAll('.whatsapp-link').forEach((link) => {
 });
 const catalog = document.querySelector('#catalog');
 function renderCatalog(filter = 'Destacadas') {
+  const visibleSolutions = filterSolutions(filter);
   catalog.replaceChildren(
-    ...filterSolutions(filter).map((s) => {
+    ...visibleSolutions.map((s) => {
       const article = document.createElement('article');
       article.className = 'solution-card';
       // Catalog is trusted, versioned editorial data; never inject form input here.
@@ -31,6 +34,8 @@ function renderCatalog(filter = 'Destacadas') {
       return article;
     }),
   );
+  const status = document.querySelector('#catalog-status');
+  if (status) status.textContent = `${visibleSolutions.length} soluciones · ${filter}`;
 }
 if (catalog) {
   renderCatalog();
@@ -51,7 +56,7 @@ if (offerRoot) {
   )) {
     const card = document.createElement('article');
     card.className = 'service';
-    card.innerHTML = `<p class="eyebrow">OFERTA INICIAL · ${offer.segment}</p><h3>${offer.name}</h3><p>${offer.description}</p><p>${offer.scope}</p><div class="service-footer"><span>${offer.price}</span><a href="./?solution=${offer.id}#solicitud" aria-label="Consultar ${offer.name}">↗</a></div>`;
+    card.innerHTML = `<p class="eyebrow">OFERTA INICIAL · ${offer.segment}</p><h3>${offer.name}</h3><p>${offer.description}</p><p class="offer-scope">${offer.scope}</p><div class="service-footer"><span>${offer.price}</span><a href="./?solution=${offer.id}#solicitud" aria-label="Consultar ${offer.name}">↗</a></div>`;
     offerRoot.append(card);
   }
 }
@@ -144,3 +149,5 @@ document.querySelector('#copy-request')?.addEventListener('click', async () => {
   }
 });
 document.querySelector('#year')?.replaceChildren(String(new Date().getFullYear()));
+
+revealSections();
