@@ -1,6 +1,8 @@
 export const solutions = [
   {
     id: 'campus-planner',
+    segments: ['Universitarios'],
+    featured: true,
     name: 'Campus Planner',
     category: 'Estudiantes',
     icon: '◈',
@@ -8,7 +10,7 @@ export const solutions = [
     tagline: 'Tu semestre, en orden.',
     description: 'Una agenda académica personal que reúne tu vida universitaria en el celular.',
     problem: 'Tareas dispersas, horarios difíciles de recordar y fechas que se pasan.',
-    audience: 'Estudiantes universitarios y grupos de estudio.',
+    audience: 'Estudiantes universitarios; uso personal e individual.',
     features: [
       'Cursos y horarios',
       'Tareas y exámenes',
@@ -23,6 +25,8 @@ export const solutions = [
   },
   {
     id: 'course-manager',
+    segments: [],
+    featured: false,
     name: 'Course Manager',
     category: 'Docentes',
     icon: '▤',
@@ -45,6 +49,8 @@ export const solutions = [
   },
   {
     id: 'clinic-pocket',
+    segments: [],
+    featured: false,
     name: 'Clinic Pocket',
     category: 'Profesionales',
     icon: '✚',
@@ -67,6 +73,8 @@ export const solutions = [
   },
   {
     id: 'agenda-local',
+    segments: ['Negocios'],
+    featured: true,
     name: 'Agenda Local',
     category: 'Negocios',
     icon: '▦',
@@ -89,6 +97,8 @@ export const solutions = [
   },
   {
     id: 'inventory-mobile',
+    segments: ['Negocios'],
+    featured: true,
     name: 'Inventory Mobile',
     category: 'Negocios',
     icon: '⬡',
@@ -111,6 +121,8 @@ export const solutions = [
   },
   {
     id: 'event-check-in',
+    segments: [],
+    featured: false,
     name: 'Event Check-in',
     category: 'Organizaciones',
     icon: '⌗',
@@ -133,6 +145,8 @@ export const solutions = [
   },
   {
     id: 'document-flow',
+    segments: [],
+    featured: false,
     name: 'Document Flow',
     category: 'Organizaciones',
     icon: '▧',
@@ -155,6 +169,8 @@ export const solutions = [
   },
   {
     id: 'custom',
+    segments: ['Universitarios', 'Negocios'],
+    featured: false,
     name: 'Desarrollo personalizado',
     category: 'A tu medida',
     icon: '↗',
@@ -173,6 +189,41 @@ export const solutions = [
     customization: ['Alcance y módulos', 'Diseño y marca', 'Integraciones cotizadas aparte'],
     price: 'Según alcance',
     time: 'Desde 3 semanas',
-    status: 'Propuesta personalizada',
+    status: 'Cotización a medida',
   },
 ];
+
+// Referencias editoriales únicas para las ofertas de entrada.
+export const offers = [
+  {
+    id: 'web-negocio',
+    name: 'Web para tu negocio',
+    price: 'Desde S/ 300',
+    platform: 'Web informativa',
+    segment: 'Negocios',
+    description:
+      'Landing informativa adaptable a móviles, con servicios o productos, contacto y botón WhatsApp.',
+    scope: 'Dominio y hosting externos no incluidos salvo acuerdo.',
+  },
+  {
+    id: 'portafolio-universitario',
+    name: 'Portafolio universitario',
+    price: 'Solicitar cotización',
+    platform: 'Web informativa',
+    segment: 'Universitarios',
+    description: 'Página personal con presentación, proyectos, habilidades y contacto.',
+    scope: 'El cliente proporciona el contenido. Definimos juntos las secciones y el alcance.',
+  },
+];
+export const androidPrice = solutions.find((s) => s.id === 'campus-planner').price;
+export function filterSolutions(filter = 'Destacadas') {
+  return solutions.filter(
+    (s) =>
+      filter === 'Todas' ||
+      (filter === 'Destacadas'
+        ? s.featured
+        : filter === 'Otras'
+          ? s.segments.length === 0
+          : s.segments.includes(filter)),
+  );
+}

@@ -1,11 +1,11 @@
-import { solutions } from './data/catalog.js';
+import { solutions, offers, androidPrice, filterSolutions } from './data/catalog.js';
 import { whatsappUrl } from './data/contact.js';
 import { requestMessage } from './lib/request.js';
 const menu = document.querySelector('.menu-toggle');
 menu?.addEventListener('click', () => {
   const expanded = menu.getAttribute('aria-expanded') !== 'true';
   menu.setAttribute('aria-expanded', String(expanded));
-  document.querySelector('#navigation').classList.toggle('open', expanded);
+  document.querySelector('#navigation')?.classList.toggle('open', expanded);
 });
 document.querySelectorAll('#navigation a').forEach((link) =>
   link.addEventListener('click', () => {
@@ -14,22 +14,22 @@ document.querySelectorAll('#navigation a').forEach((link) =>
   }),
 );
 document.querySelectorAll('.whatsapp-link').forEach((link) => {
-  link.href = whatsappUrl('Hola, Orbit Soft. Me gustaría conversar sobre un proyecto.');
+  link.href = whatsappUrl(
+    link.dataset.message || 'Hola, JaleaSec. Me gustaría conversar sobre un proyecto de software.',
+  );
   link.target = '_blank';
   link.rel = 'noopener';
 });
 const catalog = document.querySelector('#catalog');
-function renderCatalog(filter = 'Todas') {
+function renderCatalog(filter = 'Destacadas') {
   catalog.replaceChildren(
-    ...solutions
-      .filter((s) => filter === 'Todas' || s.category === filter)
-      .map((s) => {
-        const article = document.createElement('article');
-        article.className = 'solution-card';
-        // Catalog is trusted, versioned editorial data; never inject form input here.
-        article.innerHTML = `<span class="solution-icon ${s.color}" aria-hidden="true">${s.icon}</span><span class="solution-category">${s.category}</span><h3>${s.name}</h3><p>${s.description}</p><div class="card-meta"><span>${s.price}</span><small>${s.time}</small></div><a class="card-link" href="./solucion.html?id=${s.id}">Ver solución <span aria-hidden="true">↗</span><span class="sr-only"> ${s.name}</span></a>`;
-        return article;
-      }),
+    ...filterSolutions(filter).map((s) => {
+      const article = document.createElement('article');
+      article.className = 'solution-card';
+      // Catalog is trusted, versioned editorial data; never inject form input here.
+      article.innerHTML = `<span class="solution-icon ${s.color}" aria-hidden="true">${s.icon}</span><span class="solution-category">${s.category}</span><h3>${s.name}</h3><span class="catalog-status">${s.status}</span><p>${s.description}</p><div class="card-meta"><span>${s.price}</span><small>${s.time}</small></div><a class="card-link" href="./solucion.html?id=${s.id}">Ver solución <span aria-hidden="true">↗</span><span class="sr-only"> ${s.name}</span></a>`;
+      return article;
+    }),
   );
 }
 if (catalog) {
@@ -44,34 +44,81 @@ if (catalog) {
     }),
   );
 }
+const offerRoot = document.querySelector('#initial-offers');
+if (offerRoot) {
+  for (const offer of offers.filter(
+    (o) => !offerRoot.dataset.segment || o.segment === offerRoot.dataset.segment,
+  )) {
+    const card = document.createElement('article');
+    card.className = 'service';
+    card.innerHTML = `<p class="eyebrow">OFERTA INICIAL · ${offer.segment}</p><h3>${offer.name}</h3><p>${offer.description}</p><p>${offer.scope}</p><div class="service-footer"><span>${offer.price}</span><a href="./?solution=${offer.id}#solicitud" aria-label="Consultar ${offer.name}">↗</a></div>`;
+    offerRoot.append(card);
+  }
+}
+document.querySelectorAll('[data-android-price]').forEach((el) => {
+  el.textContent = androidPrice;
+});
 const select = document.querySelector('#solution-select');
+const platform = document.querySelector('#platform-select');
 if (select) {
-  for (const s of solutions) select.add(new Option(s.name, s.name));
-  const selected = solutions.find(
+  for (const s of [...offers, ...solutions]) select.add(new Option(s.name, s.name));
+  const selected = [...offers, ...solutions].find(
     (s) => s.id === new URLSearchParams(location.search).get('solution'),
   );
   if (selected) {
     select.value = selected.name;
-    document.querySelector('#platform-select').value = selected.id === 'custom' ? 'Necesito orientación' : 'App Android';
+    if (platform)
+      platform.value =
+        selected.platform || (selected.id === 'custom' ? 'Necesito orientación' : 'App Android');
+    const clientType = document.querySelector('[name="clientType"]');
+    if (clientType && selected.segment)
+      clientType.value = selected.segment === 'Negocios' ? 'Negocio' : 'Universitario';
   }
 }
 document.querySelectorAll('[data-platform]').forEach((a) =>
   a.addEventListener('click', () => {
-    document.querySelector('#platform-select').value = a.dataset.platform;
-    select.value =
-      a.dataset.platform === 'Web informativa'
-        ? 'Web informativa'
-        : a.dataset.platform === 'Ambas'
-          ? 'Desarrollo personalizado'
-          : 'Campus Planner';
+    if (platform) platform.value = a.dataset.platform;
+    if (select)
+      select.value =
+        a.dataset.platform === 'App Android'
+          ? 'Campus Planner'
+          : a.dataset.platform === 'Ambas'
+            ? 'Desarrollo personalizado'
+            : 'Web para tu negocio';
   }),
 );
+menu?.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    menu.setAttribute('aria-expanded', 'false');
+    document.querySelector('#navigation')?.classList.remove('open');
+  }
+});
+document.querySelector('#navigation')?.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    menu.setAttribute('aria-expanded', 'false');
+    document.querySelector('#navigation').classList.remove('open');
+    menu.focus();
+  }
+});
 const form = document.querySelector('#request-form');
 const date = form?.elements.date;
 if (date) {
   const now = new Date();
   date.min = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
 }
+// Reveal an optional field if browser validation needs the user's attention.
+form?.addEventListener(
+  'invalid',
+  (event) => {
+    const details = event.target.closest('details');
+    if (details) details.open = true;
+  },
+  true,
+);
+form?.addEventListener('input', () => {
+  document.querySelector('#request-result').hidden = true;
+  document.querySelector('#copy-status').textContent = '';
+});
 form?.addEventListener('submit', (event) => {
   event.preventDefault();
   if (!form.reportValidity()) return;
@@ -79,7 +126,10 @@ form?.addEventListener('submit', (event) => {
   document.querySelector('#message-preview').value = message;
   document.querySelector('#send-whatsapp').href = whatsappUrl(message);
   document.querySelector('#request-result').hidden = false;
-  document.querySelector('#request-result').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  document.querySelector('#request-result').scrollIntoView({
+    behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
+    block: 'center',
+  });
 });
 document.querySelector('#copy-request')?.addEventListener('click', async () => {
   const preview = document.querySelector('#message-preview');

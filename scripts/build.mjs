@@ -10,6 +10,6 @@ try {
 } catch {}
 await writeFile(
   'dist/web/health.json',
-  JSON.stringify({ status: 'ok', product: 'Orbit Soft', commit }),
+  JSON.stringify({ status: 'ok', product: 'JaleaSec', commit }),
 );
 console.log('Web comercial lista en dist/web');

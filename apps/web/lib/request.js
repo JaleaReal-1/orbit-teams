@@ -1,8 +1,8 @@
 const fields = [
   ['name', 'Nombre'],
-  ['whatsapp', 'WhatsApp'],
+  ['clientType', 'Tipo de cliente'],
   ['activity', 'Carrera, profesión o negocio'],
-  ['projectType', 'Tipo de proyecto'],
+
   ['solution', 'Solución'],
   ['problem', 'Problema'],
   ['features', 'Funciones necesarias'],
@@ -14,8 +14,10 @@ const fields = [
 ];
 export function requestMessage(values) {
   return [
-    'Hola, Orbit Soft. Quisiera una cotización.',
+    'Hola, JaleaSec. Quisiera una cotización.',
     '',
-    ...fields.map(([key, label]) => `${label}: ${String(values[key] || 'Por definir').trim()}`),
+    ...fields
+      .filter(([key]) => String(values[key] ?? '').trim())
+      .map(([key, label]) => `${label}: ${String(values[key]).trim()}`),
   ].join('\n');
 }
