@@ -69,3 +69,18 @@ Abrir `http://127.0.0.1:4173/`, y desde allí Negocios, Universitarios, Proyecto
 La revisión no sustituye una auditoría completa de accesibilidad, pruebas en dispositivos físicos o diferentes navegadores. Movimiento reducido se cubrió mediante tests de fallback y CSS, sin cambiar la preferencia del sistema. No se probó envío real por WhatsApp. Los precios y alcances conservan su carácter orientativo. Canonical, sitemap, dominio y rutas de producción permanecen fuera de este rediseño.
 
 Durante la implementación no se publicó ni se alteró infraestructura. Tras la revisión local, el propietario autorizó el push a `main` para activar el despliegue conectado de Cloudflare y conservar el trabajo en `codex/jaleasec-tech-lab`. El estado final del despliegue se consulta en Cloudflare.
+
+
+## Revisión visual del 19 de octubre de 2026
+
+A petición del propietario, se evoluciona la dirección anterior hacia una presentación más luminosa y visual. Fondo azul violáceo `#0d0d19`, turquesa `#79f5ce`, violeta `#bba2ff` y coral `#ffb394`. Se mantienen el stack, catálogo, precios y contacto.
+
+- Portada con composición original HTML/SVG: web conceptual, ilustración geométrica y enlace real a Campus Planner. Sin assets pesados ni solicitudes externas.
+- Tarjetas claras para Negocios y Universitarios, miniaturas ilustradas de proyectos y proceso más compacto.
+- Menos párrafos repetidos en Inicio, Negocios y Universitarios. FAQ de Inicio concentrada en cuatro preguntas; los alcances técnicos permanecen en fichas y privacidad.
+- El catálogo conserva sus ocho propuestas y filtros dentro de un desplegable nativo. Proyectos aparece antes para priorizar la exploración visual.
+- Proyectos usa descripciones breves y detalles desplegables para el alcance. Los conceptos siguen identificados como ficticios.
+- Se actualizan el acento del logo y el color de interfaz del navegador. Ningún cambio de lógica comercial, Campus Planner o infraestructura.
+- Validación: 12 pruebas y build correctos, HTML balanceado e IDs únicos. Portada sin overflow a 320/360/390/768/1024/1440 px; las otras cinco vistas verificadas a 360/390/768/1440 px. Catálogo desplegable, filtro Todas (ocho resultados), menú con Escape, solicitud preseleccionada, vista previa y copia comprobados. Sin errores de consola registrados en el recorrido.
+
+Revisión preparada en `codex/jaleasec-tech-lab`. Tras revisarla localmente, el propietario autorizó subirla a esa rama y a `main` para el despliegue conectado de Cloudflare. Revisar localmente con `npm run build` y `npm run dev` en http://127.0.0.1:4173/.
