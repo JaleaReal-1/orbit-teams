@@ -39,7 +39,7 @@ app.innerHTML = `<div class="shell"><header class="top"><div class="brand"><span
   .map(([key, label]) => `<button data-tab="${key}" disabled>${label}</button>`)
   .join(
     '',
-  )}</nav><main id="view" class="view" aria-busy="true"><p class="notice">Abriendo tu espacio…</p></main><footer class="footer">JaleaSec · Plantilla Campus Planner<br>${Capacitor.isNativePlatform() ? 'Aplicación Android · Almacenamiento local' : 'Demo de navegador · No es una PWA'} · Sin sincronización</footer></div><dialog class="dialog" id="editor"></dialog><div id="toast" class="toast" role="status" hidden></div>`;
+  )}</nav><main id="view" class="view" aria-busy="true"><p class="notice">Abriendo tu espacio…</p></main><footer class="footer">JaleaSec · Campus Planner<br>${Capacitor.isNativePlatform() ? 'Aplicación Android · Almacenamiento local' : 'Demo de navegador · No es una PWA'} · Sin sincronización</footer></div><dialog class="dialog" id="editor"></dialog><div id="toast" class="toast" role="status" hidden></div>`;
 let storageFailed = false;
 try {
   state = await repository.load();

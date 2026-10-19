@@ -32,7 +32,7 @@ export const solutions = [
     icon: '▤',
     color: 'blue',
     tagline: 'Más enseñar. Menos hojas.',
-    description: 'Una base configurable para organizar cursos y el seguimiento de tus estudiantes.',
+    description: 'Software a medida para organizar cursos y el seguimiento de tus estudiantes.',
     problem: 'Asistencia y calificaciones repartidas en distintos archivos.',
     audience: 'Docentes, academias y talleres.',
     features: [
@@ -45,7 +45,7 @@ export const solutions = [
     customization: ['Escala de notas', 'Formato de reportes', 'Identidad de la academia'],
     price: 'Desde S/ 650',
     time: '2–3 semanas',
-    status: 'Adaptación por encargo',
+    status: 'Desarrollo a medida',
   },
   {
     id: 'clinic-pocket',
@@ -69,7 +69,7 @@ export const solutions = [
     customization: ['Ficha de atención', 'Servicios', 'Colores y marca'],
     price: 'Desde S/ 750',
     time: '2–4 semanas',
-    status: 'Adaptación por encargo',
+    status: 'Desarrollo a medida',
   },
   {
     id: 'agenda-local',
@@ -93,7 +93,7 @@ export const solutions = [
     customization: ['Duración de servicios', 'Estados de reserva', 'Marca del negocio'],
     price: 'Desde S/ 450',
     time: '1–3 semanas',
-    status: 'Adaptación por encargo',
+    status: 'Desarrollo a medida',
   },
   {
     id: 'inventory-mobile',
@@ -104,7 +104,8 @@ export const solutions = [
     icon: '⬡',
     color: 'blue',
     tagline: 'Conoce lo que tienes.',
-    description: 'Control de productos y movimientos para pequeños negocios, con una base local.',
+    description:
+      'Control de productos y movimientos diseñado para tu negocio, con almacenamiento local.',
     problem: 'Stock incierto y ventas anotadas sin un registro consistente.',
     audience: 'Tiendas, emprendimientos y negocios familiares.',
     features: [
@@ -117,7 +118,7 @@ export const solutions = [
     customization: ['Unidades y categorías', 'Campos de producto', 'Formatos de reporte'],
     price: 'Desde S/ 700',
     time: '2–4 semanas',
-    status: 'Adaptación por encargo',
+    status: 'Desarrollo a medida',
   },
   {
     id: 'event-check-in',
@@ -128,7 +129,8 @@ export const solutions = [
     icon: '⌗',
     color: 'violet',
     tagline: 'La bienvenida, sin filas.',
-    description: 'Una base para registrar participantes y gestionar el ingreso a tus actividades.',
+    description:
+      'Software a medida para registrar participantes y gestionar el ingreso a tus actividades.',
     problem: 'Listas manuales que retrasan el ingreso y dificultan contar asistentes.',
     audience: 'Asociaciones, iglesias y organizadores de eventos.',
     features: [
@@ -141,7 +143,7 @@ export const solutions = [
     customization: ['Datos de inscripción', 'Identidad del evento', 'Formato de constancias'],
     price: 'Desde S/ 600',
     time: '2–3 semanas',
-    status: 'Adaptación por encargo',
+    status: 'Desarrollo a medida',
   },
   {
     id: 'document-flow',
@@ -165,7 +167,7 @@ export const solutions = [
     customization: ['Flujo de estados', 'Tipos de documento', 'Campos y reportes'],
     price: 'Desde S/ 800',
     time: '3–4 semanas',
-    status: 'Adaptación por encargo',
+    status: 'Desarrollo a medida',
   },
   {
     id: 'custom',
@@ -202,7 +204,7 @@ export const offers = [
     platform: 'Web informativa',
     segment: 'Negocios',
     description:
-      'Landing informativa adaptable a móviles, con servicios o productos, contacto y botón WhatsApp.',
+      'Web diseñada para tu marca y para móviles, con servicios o productos, contacto y WhatsApp.',
     scope: 'Dominio y hosting externos no incluidos salvo acuerdo.',
   },
   {
@@ -211,7 +213,7 @@ export const offers = [
     price: 'Solicitar cotización',
     platform: 'Web informativa',
     segment: 'Universitarios',
-    description: 'Página personal con presentación, proyectos, habilidades y contacto.',
+    description: 'Portafolio con diseño propio, presentación, proyectos, habilidades y contacto.',
     scope: 'El cliente proporciona el contenido. Definimos juntos las secciones y el alcance.',
   },
 ];

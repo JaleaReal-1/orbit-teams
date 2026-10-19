@@ -1,6 +1,6 @@
 # JaleaSec
 
-JaleaSec es una marca digital de desarrollo de software con atención online para universitarios y negocios de Juliaca, Perú. Proyecto independiente, sin afiliación institucional. Ofertas iniciales: web para negocio y portafolio universitario. Apps Android y sistemas pequeños sujetos a evaluación y cotización. No se ofrecen servicios de ciberseguridad.
+JaleaSec es una marca digital de desarrollo de software con atención online para universitarios y negocios de Juliaca, Perú. Proyecto independiente, sin afiliación institucional. Cada encargo se plantea con diseño e identidad propios para el cliente y un alcance acordado. Ofertas iniciales: web para negocio y portafolio universitario. Apps Android y sistemas pequeños sujetos a evaluación y cotización. No se ofrecen servicios de ciberseguridad.
 
 La web usa HTML, CSS y JavaScript nativo, con páginas estáticas para negocios y universitarios, catálogo de propuestas y solicitud revisable por WhatsApp. Campus Planner sigue siendo la única demo funcional.
 
@@ -28,7 +28,7 @@ apps/web/                       Web estática comercial
   data/catalog.js               Catálogo y precios orientativos
   data/contact.js               Contacto WhatsApp público
   lib/request.js                Mensaje de cotización
-apps/mobile/campus-planner/     Plantilla offline con Capacitor 8
+apps/mobile/campus-planner/     Demo offline con Capacitor 8
   android/                      Proyecto nativo Android versionado
   src/data/                     Repositorio local / frontera API futura
 packages/core/                  Dominio, copias, reportes y módulos opcionales
@@ -41,11 +41,11 @@ docs/                           Arquitectura, Android y despliegue
 
 ## Personalizar la oferta
 
-Agregar o editar soluciones y ofertas iniciales en `apps/web/data/catalog.js`. Los filtros usan metadatos editoriales `segments` y `featured` sin cambiar las categorías originales. Cada registro alimenta catálogo, ficha y selector de solicitud. Precios desde S/ 300 para webs y desde S/ 350 para una adaptación Android básica; referencias editoriales sujetas a alcance, sin prometer un paquete cerrado. Plazos en semanas desde la definición y recepción del contenido.
+Agregar o editar soluciones y ofertas iniciales en `apps/web/data/catalog.js`. Los filtros usan metadatos editoriales `segments` y `featured` sin cambiar las categorías originales. Cada registro alimenta catálogo, ficha y selector de solicitud. Precios desde S/ 300 para webs y desde S/ 350 para un desarrollo Android básico; referencias editoriales sujetas a alcance, sin prometer un paquete cerrado. Plazos en semanas desde la definición y recepción del contenido.
 
 WhatsApp comercial: +51 938 888 511. Cambiar `apps/web/data/contact.js` si cambia el contacto comercial. El formulario no almacena datos ni envía automáticamente: valida, prepara un mensaje, permite revisarlo/copiarlo y abre WhatsApp al elegir Enviar.
 
-Campus Planner es la única demo funcional. Las demás fichas son propuestas de adaptación por encargo, no apps ya terminadas. No se inventan clientes, testimonios ni trabajos entregados.
+Campus Planner es la única demo funcional. Las demás fichas son propuestas de desarrollo a medida por encargo, no apps ya terminadas. No se inventan clientes, testimonios ni trabajos entregados.
 
 ## Campus Planner
 
